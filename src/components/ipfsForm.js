@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-const JWT = process.env.JWT;
-const gateway = process.env.GATEWAY;
+const JWT = process.env.REACT_APP_JWT;
+const gateway = process.env.REACT_APP_GATEWAY;
 
 function IpfsForm ()
 {
     const [selectedFile, setSelectedFile] = useState(null);
     const [imageURL, setImageURL] = useState('');
-    const [cid, setCid] = useState('');
+
 
     const handleFileChange = (e) =>
     {
@@ -22,7 +22,6 @@ function IpfsForm ()
         if(selectedFile)
         {
             pinFileToIpfs();
-            console.log("success");
         }
         else
         {
@@ -44,12 +43,8 @@ function IpfsForm ()
                     }
                 });
             const newCid = res.data.IpfsHash;
-            setCid(res.data.IpfsHash);
-
             const newImageURL = gateway + newCid;
             setImageURL(newImageURL);
-            
-            console.log(imageURL);
         }
         catch(error)
         {
