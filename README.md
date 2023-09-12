@@ -24,7 +24,7 @@ This is a simple application that allows you to pin images to IPFS.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/DrewHuniak/IPFS-Uploader.git
 
 2. Navigate to the project directory:
     ```bash
